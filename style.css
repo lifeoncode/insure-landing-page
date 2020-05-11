@@ -6,8 +6,14 @@
 /* reset browser css */
 *, *::after{
     box-sizing: border-box;
+    scroll-behavior: smooth !important;
     margin: 0;
     padding: 0;
+}
+
+.lines{
+    position: absolute;
+    z-index: 3;
 }
 
 /* colors */
@@ -22,6 +28,10 @@
 /* body{
     
 } */
+
+#open-menu{
+    display: none;
+}
 
 .container{
     width: 80%;
@@ -135,6 +145,19 @@ nav .plans:hover{
 }
 
 
+#showcase .right_lines{
+    top: 0;
+    right: 0;
+    width: 25%;
+}
+
+#showcase .left_lines{
+    bottom: 0;
+    left: 0;
+    width: 10%;
+}
+
+
 .showcase_inner{
     position: relative;
     top: 10vh;
@@ -209,10 +232,18 @@ nav .plans:hover{
 }
 
 .find_more{
+    position: relative;
     background-color: var(--primary-violet);
     padding: 4rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+
+.find_more .lines{
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 38%;
 }
 
 .find_more h3{
@@ -226,6 +257,8 @@ nav .plans:hover{
 }
 
 .find_more .plans{
+    position: relative;
+    z-index: 2;
     padding: 1rem 2rem;
     font-size: 0.9rem;
     color: #fff;
@@ -241,7 +274,14 @@ nav .plans:hover{
 
 /* footer */
 footer{
+    position: relative;
     background-color: var(--neutral-gray);
+}
+
+footer .lines{
+    top: 0;
+    left: 0;
+    width: 30%;
 }
 
 .footer_header{
@@ -292,4 +332,284 @@ footer{
 
 .footer_content li:hover{
     text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+@media(max-width: 1024px){
+
+    header nav li{
+        padding: 0 1rem
+    }
+    
+    
+    #showcase{
+        height: 50vh;
+    }
+
+    .showcase_inner{
+        top: 0;
+    }
+
+    #about{
+        padding: 2rem 0 4rem 0;
+    }
+}
+
+
+
+
+@media(max-width: 768px){
+
+    .container{
+        width: 90%;
+    }
+
+    
+    header nav li{
+        padding: 0 1rem
+    }
+    
+    header nav .plans{
+        padding: 0.5rem 1rem;
+    }
+    
+    #showcase{
+        height: 50vh;
+    }
+
+    
+    .showcase_inner{
+        top: 0;
+    }
+
+    .showcase_inner h1{
+        font-size: 2rem;
+    }
+
+    #about{
+        padding: 2rem 0 4rem 0;
+    }
+
+    .find_more h3{
+        font-size: 2rem;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 430px){
+
+    *{
+        text-align: center;
+    }
+    
+    
+    .container{
+        width: 90%;
+    }
+
+
+    header nav{
+        background-color: var(--neutral-darkviolet);
+        padding: 4rem 0;
+        position: absolute;
+        top: -100vh;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .header_inner{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header #logo{
+        width: 50%;
+        align-self: center;
+    }
+
+    
+    #open-menu{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        display: block;
+        width: 35px;
+        margin: auto;
+    }
+
+    #close-menu{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        display: block;
+        width: 35px;
+        margin: auto;
+    }
+    
+    header nav li{
+        display: block;
+        padding: 0;
+        margin-bottom: 4rem;
+    }
+
+    header nav li a{
+        color: #fff;
+    }
+    
+    header nav .plans{
+        padding: 0.5rem 1rem;
+        color: #Fff;
+        padding: 1rem 2rem;
+        border: 1px solid #fff;
+    }
+    
+    #showcase{
+        height: auto;
+    }
+
+    #showcase::after{
+        display: none;
+    }
+
+    #showcase .container{
+        width: 100%;
+    }
+
+    .showcase_image{
+        width: 100%;
+    }
+
+    .showcase_inner{
+        display: flex;
+        flex-direction: column-reverse;
+        grid-template-columns: none;
+        top: 0;
+    }
+
+    .showcase_inner .text{
+        background-color: var(--primary-violet);
+        padding: 4rem 1rem;
+    }
+
+
+    .showcase_inner h1{
+        font-size: 2rem;
+    }
+
+    .showcase_inner p{
+        margin: 2rem 0 3rem 0;
+    }
+
+    #about{
+        padding: 2rem 0 4rem 0;
+    }
+
+    .about_inner{
+        grid-template-columns: none;
+        grid-gap: 2rem 0;
+    }
+
+    .find_more{
+        grid-template-columns: none;
+        grid-gap: 3rem 0;
+        padding: 4rem 2rem;
+    }
+
+    .find_more a{
+        display: inline-block;
+        width: 100%;
+    }
+
+    .find_more h3{
+        font-size: 2rem;
+    }
+    
+    .footer_header{
+        display: block;
+    }
+
+    .footer_header .logo{
+        display: none;
+    }
+
+    .footer_header .social{
+        text-align: center !important;
+    }
+
+    .footer_header .social img{
+        width: 8%;
+    }
+
+    .footer_header .social li{
+        padding: 0 1rem;
+    }
+    
+
+    .footer_content{
+        grid-template-columns: none;
+        grid-gap: 2rem 0;
+    }
+}
+
+
+
+
+.hide{
+    display: none !important;
+}
+
+
+.show-menu{
+    opacity: 0;
+    animation: show 0.5s 0.1s ease forwards;
+}
+@keyframes show{
+    100%{
+        opacity: 1;
+        top: 50px;
+    }
+}
+
+.hide-menu{
+    opacity: 1;
+    animation: hide 0.5s 0.1s ease forwards;
+}
+@keyframes hide{
+    100%{
+        opacity: 0;
+        top: -100vh;
+    }
 }
